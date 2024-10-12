@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>BANK PAYMENT FLOW</title>
+    <title>TRANSFER PAYMENT FLOW</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="#" />
@@ -37,8 +37,8 @@
                   name="payment-method"
                   value="bank"
                   aria-label="Pay with bank"
-                  tabindex="1"
-                  checked
+                  tabindex="-1"
+                  disabled
                 />
                 <label for="bank">Bank</label>
                 <input
@@ -47,81 +47,39 @@
                   name="payment-method"
                   value="transfer"
                   aria-label="Pay with transfer"
-                  tabindex="-1"
-                  disabled
+                  tabindex="1"
+                  checked
                 />
                 <label for="transfer">Transfer</label>
               </div>
             </div>
             <div>
-              <label for="bank-selection">Choose your bank</label>
-              <select
-                name="bank-selection"
-                aria-label="Choose your bank"
-                aria-required="true"
-                aria-describedby="bank-selection-help"
-                required
-                tabindex="2"
-              >
-                <option
-                  value=""
-                  disabled
-                  selected
-                  aria-label="No bank selected"
-                >
-                  Choose your bank
-                </option>
-                <option value="Access Bank" aria-label="Access Bank">
-                  Access Bank
-                </option>
-                <option
-                  value="United Bank for Africa (UBA)"
-                  aria-label="United Bank for Africa"
-                >
-                  United Bank for Africa (UBA)
-                </option>
-                <option value="Keystone Bank" aria-label="Keystone Bank">
-                  Keystone Bank
-                </option>
-                <option value="Sterling Bank" aria-label="Sterling Bank">
-                  Sterling Bank
-                </option>
-                <option value="Zenith Bank" aria-label="Zenith Bank">
-                  Zenith Bank
-                </option>
-                <option value="Union Bank" aria-label="Union Bank">
-                  Union Bank
-                </option>
-                <option
-                  value="Kuda Microfinance Bank"
-                  aria-label="Kuda Microfinance Bank"
-                >
-                  Kuda Microfinance Bank
-                </option>
-                <option value="First Bank" aria-label="First Bank">
-                  First Bank
-                </option>
-              </select>
-              <fieldset>
-                <legend>Payment Details</legend>
-                <label for="account-number"
-                  >Enter Your Bank Account Number</label
-                ><br />
-                <input
-                  type="text"
-                  id="account-number"
-                  name="account-number"
-                  value="0123456789"
-                  tabindex="3"
-                  aria-label="Enter your bank account number"
-                  required
-                  pattern="\d{10}"
-                  maxlength="10"
+              <h4>Transfer USD49.80 to:</h4>
+              <p>Polaris Bank</p>
+              <div>
+                <span aria-label="Bank account number">0123456781</span>
+                <img
+                  src="../copy-icon.png"
+                  alt="Copy account number"
+                  aria-label="Copy bank account number"
+                  aria-describedby="account-number"
+                  role="button"
+                  tabindex="2"
                 />
-              </fieldset>
+              </div>
+              <p>
+                Expires in
+                <time
+                  aria-label="Time remaining"
+                  datetime="PT10M"
+                  aria-describedby="expires-info"
+                  >10:00</time
+                >
+                minutes
+              </p>
             </div>
-            <button type="submit" aria-label="Proceed to payment" tabindex="4">
-              Pay USD59.28
+            <button type="submit" aria-label="Proceed to payment" tabindex="3">
+              Confirm payment
             </button>
             <small
               >Your personal data will be used to process your order, support
@@ -146,12 +104,12 @@
                 placeholder="Enter code"
                 aria-label="Enter a gift or discount code"
                 aria-describedby="discount-help"
-                tabindex="5"
+                tabindex="4"
               />
               <button
                 type="button"
                 aria-label="Apply discount or gift code"
-                tabindex="6"
+                tabindex="5"
               >
                 Apply
               </button>
