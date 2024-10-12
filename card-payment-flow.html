@@ -9,24 +9,25 @@
           id="card"
           name="payment-method"
           value="card"
+          aria-label="Pay with card"
           checked
         />
         <label for="card">Card</label>
-
         <input
           type="radio"
           id="bank"
           name="payment-method"
           value="bank"
+          aria-label="Pay with bank"
           disabled
         />
         <label for="bank">Bank</label>
-
         <input
           type="radio"
           id="transfer"
           name="payment-method"
           value="transfer"
+          aria-label="Pay with transfer"
           disabled
         />
         <label for="transfer">Transfer</label>
@@ -44,6 +45,8 @@
         aria-required="true"
         maxlength="16"
         title="Please enter a valid 16-digit card number"
+        aria-describedby="card-help"
+        aria-label="Enter your 16-digit card number"
       />
     </div>
     <div>
@@ -58,6 +61,8 @@
         aria-required="true"
         maxlength="5"
         title="Please enter the expiration date in MM/YY format"
+        aria-label="Enter the card's expiration date in MM/YY format"
+        aria-describedby="exp-help"
       />
     </div>
     <div>
@@ -72,13 +77,20 @@
         aria-required="true"
         maxlength="3"
         title="Please enter a valid 3-digit CVV"
+        aria-label="Enter the 3-digit security code on the back of your card"
+        aria-describedby="cvv-help"
       />
     </div>
     <div>
-      <input type="checkbox" id="save-card" name="save-card" />
+      <input
+        type="checkbox"
+        id="save-card"
+        name="save-card"
+        aria-label="Save card details for future purchases"
+      />
       <label for="save-card">Save card details</label>
     </div>
-    <button type="submit">Pay USD59.28</button>
+    <button type="submit" aria-label="Proceed to payment">Pay USD59.28</button>
     <small
       >Your personal data will be used to process your order, support your
       experience throughout this website, and for other purposes described in
@@ -99,8 +111,12 @@
         id="discount-code"
         name="discount-code"
         placeholder="Enter code"
+        aria-label="Enter a gift or discount code"
+        aria-describedby="discount-help"
       />
-      <button type="button">Apply</button>
+      <button type="button" aria-label="Apply discount or gift code">
+        Apply
+      </button>
     </div>
     <div>
       <p>Subtotal: $49.80</p>
