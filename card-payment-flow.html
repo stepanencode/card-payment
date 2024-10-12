@@ -1,127 +1,151 @@
-<form action="/submit-payment" method="post">
-  <fieldset>
-    <legend>Payment</legend>
-    <div>
-      <label for="payment-method">Pay With:</label>
-      <div>
-        <input
-          type="radio"
-          id="card"
-          name="payment-method"
-          value="card"
-          aria-label="Pay with card"
-          checked
-        />
-        <label for="card">Card</label>
-        <input
-          type="radio"
-          id="bank"
-          name="payment-method"
-          value="bank"
-          aria-label="Pay with bank"
-          disabled
-        />
-        <label for="bank">Bank</label>
-        <input
-          type="radio"
-          id="transfer"
-          name="payment-method"
-          value="transfer"
-          aria-label="Pay with transfer"
-          disabled
-        />
-        <label for="transfer">Transfer</label>
-      </div>
-    </div>
-    <div>
-      <label for="card-number">Card Number</label>
-      <input
-        type="text"
-        id="card-number"
-        name="card-number"
-        pattern="\d{16}"
-        placeholder="1234 5678 9101 1121"
-        required
-        aria-required="true"
-        maxlength="16"
-        title="Please enter a valid 16-digit card number"
-        aria-describedby="card-help"
-        aria-label="Enter your 16-digit card number"
-      />
-    </div>
-    <div>
-      <label for="exp-date">Expiration Date</label>
-      <input
-        type="text"
-        id="exp-date"
-        name="exp-date"
-        pattern="\d{2}/\d{2}"
-        placeholder="MM/YY"
-        required
-        aria-required="true"
-        maxlength="5"
-        title="Please enter the expiration date in MM/YY format"
-        aria-label="Enter the card's expiration date in MM/YY format"
-        aria-describedby="exp-help"
-      />
-    </div>
-    <div>
-      <label for="cvv">CVV</label>
-      <input
-        type="text"
-        id="cvv"
-        name="cvv"
-        pattern="\d{3}"
-        placeholder="123"
-        required
-        aria-required="true"
-        maxlength="3"
-        title="Please enter a valid 3-digit CVV"
-        aria-label="Enter the 3-digit security code on the back of your card"
-        aria-describedby="cvv-help"
-      />
-    </div>
-    <div>
-      <input
-        type="checkbox"
-        id="save-card"
-        name="save-card"
-        aria-label="Save card details for future purchases"
-      />
-      <label for="save-card">Save card details</label>
-    </div>
-    <button type="submit" aria-label="Proceed to payment">Pay USD59.28</button>
-    <small
-      >Your personal data will be used to process your order, support your
-      experience throughout this website, and for other purposes described in
-      our privacy policy.</small
-    >
-  </fieldset>
-  <fieldset>
-    <legend>Order Summary</legend>
-    <div>
-      <p>Taxmax Leather Bag (Brown Vegan Leather)</p>
-      <p>Price: $49.80</p>
-      <p>Quantity: 2</p>
-    </div>
-    <div>
-      <label for="discount-code">Gift or discount code</label>
-      <input
-        type="text"
-        id="discount-code"
-        name="discount-code"
-        placeholder="Enter code"
-        aria-label="Enter a gift or discount code"
-        aria-describedby="discount-help"
-      />
-      <button type="button" aria-label="Apply discount or gift code">
-        Apply
-      </button>
-    </div>
-    <div>
-      <p>Subtotal: $49.80</p>
-      <p>Shipping: $7.24</p>
-      <p>Total: $59.28 (including $2.24 in taxes)</p>
-    </div>
-  </fieldset>
-</form>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> -<![endif]-->
+<html lang="EN-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>CARD PAYMENT FLOW</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="#" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <form action="/submit-payment" method="post">
+          <fieldset>
+            <legend>Payment</legend>
+            <div>
+              <label for="payment-method">Pay With:</label>
+              <div>
+                <input
+                  type="radio"
+                  id="card"
+                  name="payment-method"
+                  value="card"
+                  aria-label="Pay with card"
+                  checked
+                />
+                <label for="card">Card</label>
+                <input
+                  type="radio"
+                  id="bank"
+                  name="payment-method"
+                  value="bank"
+                  aria-label="Pay with bank"
+                  disabled
+                />
+                <label for="bank">Bank</label>
+                <input
+                  type="radio"
+                  id="transfer"
+                  name="payment-method"
+                  value="transfer"
+                  aria-label="Pay with transfer"
+                  disabled
+                />
+                <label for="transfer">Transfer</label>
+              </div>
+            </div>
+            <div>
+              <label for="card-number">Card Number</label>
+              <input
+                type="text"
+                id="card-number"
+                name="card-number"
+                pattern="\d{16}"
+                placeholder="1234 5678 9101 1121"
+                required
+                aria-required="true"
+                maxlength="16"
+                title="Please enter a valid 16-digit card number"
+                aria-describedby="card-help"
+                aria-label="Enter your 16-digit card number"
+              />
+            </div>
+            <div>
+              <label for="exp-date">Expiration Date</label>
+              <input
+                type="text"
+                id="exp-date"
+                name="exp-date"
+                pattern="\d{2}/\d{2}"
+                placeholder="MM/YY"
+                required
+                aria-required="true"
+                maxlength="5"
+                title="Please enter the expiration date in MM/YY format"
+                aria-label="Enter the card's expiration date in MM/YY format"
+                aria-describedby="exp-help"
+              />
+            </div>
+            <div>
+              <label for="cvv">CVV</label>
+              <input
+                type="text"
+                id="cvv"
+                name="cvv"
+                pattern="\d{3}"
+                placeholder="123"
+                required
+                aria-required="true"
+                maxlength="3"
+                title="Please enter a valid 3-digit CVV"
+                aria-label="Enter the 3-digit security code on the back of your card"
+                aria-describedby="cvv-help"
+              />
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="save-card"
+                name="save-card"
+                aria-label="Save card details for future purchases"
+              />
+              <label for="save-card">Save card details</label>
+            </div>
+            <button type="submit" aria-label="Proceed to payment">
+              Pay USD59.28
+            </button>
+            <small
+              >Your personal data will be used to process your order, support
+              your experience throughout this website, and for other purposes
+              described in our privacy policy.</small
+            >
+          </fieldset>
+          <fieldset>
+            <legend>Order Summary</legend>
+            <div>
+              <p>Taxmax Leather Bag (Brown Vegan Leather)</p>
+              <p>Price: $49.80</p>
+              <p>Quantity: 2</p>
+            </div>
+            <div>
+              <label for="discount-code">Gift or discount code</label>
+              <input
+                type="text"
+                id="discount-code"
+                name="discount-code"
+                placeholder="Enter code"
+                aria-label="Enter a gift or discount code"
+                aria-describedby="discount-help"
+              />
+              <button type="button" aria-label="Apply discount or gift code">
+                Apply
+              </button>
+            </div>
+            <div>
+              <p>Subtotal: $49.80</p>
+              <p>Shipping: $7.24</p>
+              <p>Total: $59.28 (including $2.24 in taxes)</p>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+    <script src="../index.js" async defer></script>
+  </body>
+</html>
