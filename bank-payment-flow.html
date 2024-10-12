@@ -27,8 +27,8 @@
                   name="payment-method"
                   value="card"
                   aria-label="Pay with card"
-                  tabindex="1"
-                  checked
+                  tabindex="-1"
+                  disabled
                 />
                 <label for="card">Card</label>
                 <input
@@ -37,8 +37,8 @@
                   name="payment-method"
                   value="bank"
                   aria-label="Pay with bank"
-                  tabindex="-1"
-                  disabled
+                  tabindex="1"
+                  checked
                 />
                 <label for="bank">Bank</label>
                 <input
@@ -54,67 +54,73 @@
               </div>
             </div>
             <div>
-              <label for="card-number">Card Number</label>
-              <input
-                type="text"
-                id="card-number"
-                name="card-number"
-                pattern="\d{16}"
-                placeholder="1234 5678 9101 1121"
-                required
+              <label for="bank-selection">Choose your bank</label>
+              <select
+                name="bank-selection"
+                aria-label="Choose your bank"
                 aria-required="true"
-                maxlength="16"
-                title="Please enter a valid 16-digit card number"
-                aria-describedby="card-help"
-                aria-label="Enter your 16-digit card number"
+                aria-describedby="bank-selection-help"
+                required
                 tabindex="2"
-              />
+              >
+                <option
+                  value=""
+                  disabled
+                  selected
+                  aria-label="No bank selected"
+                >
+                  Choose your bank
+                </option>
+                <option value="Access Bank" aria-label="Access Bank">
+                  Access Bank
+                </option>
+                <option
+                  value="United Bank for Africa (UBA)"
+                  aria-label="United Bank for Africa"
+                >
+                  United Bank for Africa (UBA)
+                </option>
+                <option value="Keystone Bank" aria-label="Keystone Bank">
+                  Keystone Bank
+                </option>
+                <option value="Sterling Bank" aria-label="Sterling Bank">
+                  Sterling Bank
+                </option>
+                <option value="Zenith Bank" aria-label="Zenith Bank">
+                  Zenith Bank
+                </option>
+                <option value="Union Bank" aria-label="Union Bank">
+                  Union Bank
+                </option>
+                <option
+                  value="Kuda Microfinance Bank"
+                  aria-label="Kuda Microfinance Bank"
+                >
+                  Kuda Microfinance Bank
+                </option>
+                <option value="First Bank" aria-label="First Bank">
+                  First Bank
+                </option>
+              </select>
+              <fieldset>
+                <legend>Payment Details</legend>
+                <label for="account-number"
+                  >Enter Your Bank Account Number</label
+                ><br />
+                <input
+                  type="text"
+                  id="account-number"
+                  name="account-number"
+                  value="0123456789"
+                  tabindex="3"
+                  aria-label="Enter your bank account number"
+                  required
+                  pattern="\d{10}"
+                  maxlength="10"
+                />
+              </fieldset>
             </div>
-            <div>
-              <label for="exp-date">Expiration Date</label>
-              <input
-                type="text"
-                id="exp-date"
-                name="exp-date"
-                pattern="\d{2}/\d{2}"
-                placeholder="MM/YY"
-                required
-                aria-required="true"
-                maxlength="5"
-                title="Please enter the expiration date in MM/YY format"
-                aria-label="Enter the card's expiration date in MM/YY format"
-                aria-describedby="exp-help"
-                tabindex="3"
-              />
-            </div>
-            <div>
-              <label for="cvv">CVV</label>
-              <input
-                type="text"
-                id="cvv"
-                name="cvv"
-                pattern="\d{3}"
-                placeholder="123"
-                required
-                aria-required="true"
-                maxlength="3"
-                title="Please enter a valid 3-digit CVV"
-                aria-label="Enter the 3-digit security code on the back of your card"
-                aria-describedby="cvv-help"
-                tabindex="4"
-              />
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                id="save-card"
-                name="save-card"
-                aria-label="Save card details for future purchases"
-                tabindex="5"
-              />
-              <label for="save-card">Save card details</label>
-            </div>
-            <button type="submit" aria-label="Proceed to payment" tabindex="6">
+            <button type="submit" aria-label="Proceed to payment" tabindex="4">
               Pay USD59.28
             </button>
             <small
@@ -140,12 +146,12 @@
                 placeholder="Enter code"
                 aria-label="Enter a gift or discount code"
                 aria-describedby="discount-help"
-                tabindex="7"
+                tabindex="5"
               />
               <button
                 type="button"
                 aria-label="Apply discount or gift code"
-                tabindex="8"
+                tabindex="6"
               >
                 Apply
               </button>
