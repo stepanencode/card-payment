@@ -1,0 +1,111 @@
+<form action="/submit-payment" method="post">
+  <fieldset>
+    <legend>Payment</legend>
+    <div>
+      <label for="payment-method">Pay With:</label>
+      <div>
+        <input
+          type="radio"
+          id="card"
+          name="payment-method"
+          value="card"
+          checked
+        />
+        <label for="card">Card</label>
+
+        <input
+          type="radio"
+          id="bank"
+          name="payment-method"
+          value="bank"
+          disabled
+        />
+        <label for="bank">Bank</label>
+
+        <input
+          type="radio"
+          id="transfer"
+          name="payment-method"
+          value="transfer"
+          disabled
+        />
+        <label for="transfer">Transfer</label>
+      </div>
+    </div>
+    <div>
+      <label for="card-number">Card Number</label>
+      <input
+        type="text"
+        id="card-number"
+        name="card-number"
+        pattern="\d{16}"
+        placeholder="1234 5678 9101 1121"
+        required
+        aria-required="true"
+        maxlength="16"
+        title="Please enter a valid 16-digit card number"
+      />
+    </div>
+    <div>
+      <label for="exp-date">Expiration Date</label>
+      <input
+        type="text"
+        id="exp-date"
+        name="exp-date"
+        pattern="\d{2}/\d{2}"
+        placeholder="MM/YY"
+        required
+        aria-required="true"
+        maxlength="5"
+        title="Please enter the expiration date in MM/YY format"
+      />
+    </div>
+    <div>
+      <label for="cvv">CVV</label>
+      <input
+        type="text"
+        id="cvv"
+        name="cvv"
+        pattern="\d{3}"
+        placeholder="123"
+        required
+        aria-required="true"
+        maxlength="3"
+        title="Please enter a valid 3-digit CVV"
+      />
+    </div>
+    <div>
+      <input type="checkbox" id="save-card" name="save-card" />
+      <label for="save-card">Save card details</label>
+    </div>
+    <button type="submit">Pay USD59.28</button>
+    <small
+      >Your personal data will be used to process your order, support your
+      experience throughout this website, and for other purposes described in
+      our privacy policy.</small
+    >
+  </fieldset>
+  <fieldset>
+    <legend>Order Summary</legend>
+    <div>
+      <p>Taxmax Leather Bag (Brown Vegan Leather)</p>
+      <p>Price: $49.80</p>
+      <p>Quantity: 2</p>
+    </div>
+    <div>
+      <label for="discount-code">Gift or discount code</label>
+      <input
+        type="text"
+        id="discount-code"
+        name="discount-code"
+        placeholder="Enter code"
+      />
+      <button type="button">Apply</button>
+    </div>
+    <div>
+      <p>Subtotal: $49.80</p>
+      <p>Shipping: $7.24</p>
+      <p>Total: $59.28 (including $2.24 in taxes)</p>
+    </div>
+  </fieldset>
+</form>
